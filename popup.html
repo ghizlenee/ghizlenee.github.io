@@ -1,0 +1,94 @@
+<html><head></head>
+<style>
+ body {
+    background-color: green;
+}
+.cover {
+    height: 100%;
+    width: 100%;
+    position: absolute;}
+.blur-in{
+animation: blur 2s forwards; }
+.blur-out { 
+   animation: blur-out 2s forwards;}
+
+.content {
+    width: 250px;
+  margin: 0 auto;
+    padding-top: 100px;
+  color: orange;
+}
+.pop-up{
+    position: fixed;
+    margin: 5% auto;
+    left: 0;
+    right: 0;z-index:1;}
+.box {
+    background-color: whitesmoke;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
+    position: relative;
+    box-shadow: 0px 4px 6px 0px rgba(0,0,0,0.1);
+}
+
+.button {
+    margin: 0 auto;cursor:pointer;
+  background-color: red;
+    margin-bottom: 33px;
+}
+.close-button {
+    transition: all 0.5s ease;
+    position: absolute;
+    background-color: #FF9980;
+    padding: 1.5px 7px;
+    left: 0;
+    margin-left: -10px;
+    margin-top: -9px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    color: white;
+    box-shadow: -3px 1px 6px 0px rgba(0,0,0,0.1);
+}
+.close-button:hover {
+    background-color:black;
+    color: #fff;
+}
+
+
+
+</style>
+<body>
+  <div id="overlay" class="cover blur-in">
+  <div class="content">
+    It is a long established fact that a reader will be distracted by the readand the like).
+  </div>
+</div>
+<div class="pop-up">
+  <div class="box small-6 large-centered">
+    <a  class="close-button">blue</a>
+    <p>Integer non odio id ante rutrum dictumpharetra sapien. </p>
+    <p>Maecenas d mattces risus in
+      tincidunt.</p>
+    <a  class="button">Learn More</a>
+  </div>
+</div></body>
+  
+<script
+src="http://code.jquery.com/jquery-3.3.1.js"
+integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+crossorigin="anonymous"></script>
+  <script>$(function () {
+  $('.pop-up').hide();
+  $('.pop-up').fadeIn();
+  
+      $('.close-button').click(function (e) { 
+
+      $('.pop-up').fadeOut();
+      $('#overlay').removeClass('blur-in');
+      $('#overlay').addClass('blur-out');
+      
+        
+    });
+ });</script></html>
